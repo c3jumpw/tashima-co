@@ -1,1 +1,513 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tashima Freeman | Accountant, Entrepreneur, Community Leader</title>
+<meta name="description" content="Tashima Freeman is an accountant, the founder of KSK Tax & Accounting Solutions and Elite Circle, and a community leader in South Fulton, Georgia.">
+<link rel="canonical" href="https://tashimafreeman.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tashimafreeman.com/">
+<meta property="og:title" content="Tashima Freeman">
+<meta property="og:description" content="Accountant, entrepreneur, and community leader in South Fulton, Georgia.">
+<meta property="og:image" content="https://tashimafreeman.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#000000">
+<link rel="preload" href="assets/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tashima Freeman",
+  "url": "https://tashimafreeman.com/",
+  "jobTitle": "Accountant and entrepreneur",
+  "address": {"@type": "PostalAddress", "addressLocality": "South Fulton", "addressRegion": "GA", "addressCountry": "US"},
+  "founder": [
+    {"@type": "AccountingService", "name": "KSK Tax & Accounting Solutions", "url": "https://kskaccounting.com/"},
+    {"@type": "Organization", "name": "Elite Circle Enterprises", "url": "https://enterelitecircle.com/"}
+  ],
+  "sameAs": [
+    "https://www.instagram.com/tashimafreeman",
+    "https://www.facebook.com/tashimafreeman",
+    "https://www.linkedin.com/in/tashimafreeman"
+  ]
+}
+</script>
+<style>
+@font-face{font-family:"Archivo";src:url(assets/fonts/archivo.woff2) format("woff2-variations"),url(assets/fonts/archivo.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+:root{
+  --ink:#000;
+  --paper:#fff;
+  --fog:#ecebe7;
+  --graphite:#55534e;
+  --ksk-navy:#01172e;
+  --ksk-royal:#0041c3;
+  --ksk-sky:#a1d4ff;
+  --ec-gold:#d7b71a;
+  --b:clamp(14px, 2.2vw, 30px);           /* monogram bar thickness */
+  --maxw:1240px;
+  --gutter:clamp(20px, 4vw, 48px);
+  --edge:max(var(--gutter), calc((100vw - var(--maxw)) / 2));
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Archivo",system-ui,sans-serif;font-size:1.125rem;line-height:1.55;
+  font-variation-settings:"wdth" 100;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ksk-royal);outline-offset:3px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:.6rem 1rem;z-index:10}
+.skip:focus{left:var(--gutter)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+.wide{font-variation-settings:"wdth" 125}
+h1,h2,h3{margin:0;font-weight:700;line-height:1.05;letter-spacing:-.01em;text-wrap:balance}
+h2{font-size:clamp(2.25rem,4.6vw,3.75rem);font-variation-settings:"wdth" 125;letter-spacing:-.02em}
+h3{font-size:1.5rem;font-variation-settings:"wdth" 112}
+p{margin:0}
 
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6em;min-height:52px;padding:.8rem 1.5rem;border:2px solid var(--ink);
+  font:600 1rem/1 "Archivo",sans-serif;font-variation-settings:"wdth" 112;text-decoration:none;cursor:pointer;transition:background .15s,color .15s}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--paper);color:var(--ink)}
+.btn-line{background:transparent;color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+
+/* header */
+.site-head{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1.1rem}
+.brand{display:flex;align-items:center;gap:.75rem;text-decoration:none}
+.brand svg{width:44px;height:auto}
+.brand span{font-size:.8rem;font-weight:500;letter-spacing:.32em;font-variation-settings:"wdth" 125;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:clamp(1rem,2.2vw,2rem)}
+.nav a{text-decoration:none;font-weight:500;font-size:1rem}
+.nav a:not(.btn):hover{text-decoration:underline;text-underline-offset:.3em;text-decoration-thickness:2px}
+.nav .btn{min-height:44px;padding:.6rem 1.1rem}
+.menu-btn{display:none}
+@media (max-width:860px){
+  .brand span{display:none}
+  .nav{position:absolute;top:100%;left:0;right:0;z-index:5;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);border-bottom:var(--b) solid var(--ink);display:none;padding:0 var(--gutter) 1rem}
+  .nav.open{display:flex}
+  .nav a{padding:.9rem 0;border-bottom:1px solid var(--fog)}
+  .nav .btn{margin-top:1rem;justify-content:center}
+  .menu-btn{display:inline-flex;min-height:44px;padding:.5rem 1rem}
+}
+
+/* hero: the TF monogram drawn at page scale */
+.hero{position:relative;overflow:clip;padding:calc(var(--b) * 2) 0 clamp(4rem,9vw,8rem)}
+.hero .bar{position:absolute;background:var(--ink)}
+.bar-top{top:0;left:0;right:0;height:var(--b);transform-origin:left}
+.bar-stem{top:calc(var(--b) * 2);bottom:0;left:var(--edge);width:var(--b);transform-origin:top}
+.bar-fstem{top:calc(var(--b) * 2.66);bottom:0;left:calc(var(--edge) + var(--b) * 1.45);width:var(--b);transform-origin:top}
+.bar-farm{top:calc(var(--b) * 2.66);left:calc(var(--edge) + var(--b) * 1.45);right:0;height:var(--b);transform-origin:left}
+.hero-inner{padding-left:calc(var(--edge) + var(--b) * 2.45 + clamp(1rem,3vw,3rem));padding-right:var(--gutter);padding-top:calc(var(--b) * 1.66 + clamp(2rem,5vw,4.5rem));max-width:calc(var(--maxw) + var(--edge))}
+.hero h1{font-size:clamp(3rem,12vw,12.5rem);line-height:.88;font-weight:800;font-variation-settings:"wdth" 125;letter-spacing:-.035em}
+.hero h1 span{display:block}
+.hero-foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem;margin-top:clamp(2rem,4vw,3.5rem)}
+.lede{max-width:34em;font-size:clamp(1.125rem,1.6vw,1.3125rem);line-height:1.5;color:var(--ink)}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem}
+@media (prefers-reduced-motion:no-preference){
+  .bar-top{animation:grow-x .7s cubic-bezier(.7,0,.2,1) both}
+  .bar-stem{animation:grow-y .6s .45s cubic-bezier(.7,0,.2,1) both}
+  .bar-fstem{animation:grow-y .6s .6s cubic-bezier(.7,0,.2,1) both}
+  .bar-farm{animation:grow-x .7s .6s cubic-bezier(.7,0,.2,1) both}
+  .hero-inner{animation:rise .7s 1s ease-out both}
+  @keyframes grow-x{from{transform:scaleX(0)}}
+  @keyframes grow-y{from{transform:scaleY(0)}}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}}
+}
+
+/* roles band */
+.roles{background:var(--ink);color:var(--paper);padding:clamp(2rem,4vw,3rem) 0}
+.roles ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1.4rem;
+  font-size:clamp(1.4rem,3.2vw,2.6rem);font-weight:600;font-variation-settings:"wdth" 125;letter-spacing:-.01em;line-height:1.15}
+.roles li{display:flex;align-items:center;gap:.7rem}
+.roles li::before{content:"";width:.42em;height:.42em;background:var(--paper);flex:none}
+
+section{scroll-margin-top:1rem}
+.block{padding:clamp(4.5rem,9vw,8rem) 0}
+.lead-in{max-width:40em;margin-top:1.25rem;color:var(--graphite);font-size:1.1875rem}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,6vw,6rem);align-items:start}
+.portrait{margin:0;aspect-ratio:4/5;background:var(--fog);position:relative;overflow:hidden}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.portrait .mark{position:absolute;left:12%;right:12%;top:50%;transform:translateY(-50%)}
+.portrait .mark svg{width:100%;height:auto}
+.statement{font-size:clamp(1.6rem,2.8vw,2.375rem);font-weight:600;line-height:1.18;font-variation-settings:"wdth" 112;letter-spacing:-.015em;max-width:22em}
+.about-copy{display:grid;gap:1.1rem;margin-top:2rem;max-width:36em;color:#1d1c1a}
+@media (max-width:820px){.about-grid{grid-template-columns:1fr}.portrait{max-width:420px}}
+
+/* what I do */
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1.5rem,3vw,3rem);margin-top:clamp(2.5rem,5vw,4rem)}
+.pillar{border-top:var(--b) solid var(--ink);padding-top:1.5rem;display:flex;flex-direction:column;gap:.9rem}
+.pillar p{color:var(--graphite);max-width:30em}
+.pillar a{margin-top:auto;font-weight:600;text-underline-offset:.3em;text-decoration-thickness:2px;padding-top:.5rem}
+@media (max-width:860px){.pillars{grid-template-columns:1fr}}
+
+/* ventures */
+.ventures{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2vw,1.5rem);margin-top:clamp(2.5rem,5vw,4rem)}
+.venture{color:#fff;padding:clamp(1.75rem,4vw,3.25rem);display:flex;flex-direction:column;gap:1.1rem;min-height:440px;text-decoration:none;position:relative}
+.venture .logo{margin-bottom:1rem;height:clamp(56px,7vw,84px);width:auto;object-fit:contain;object-position:left center;align-self:flex-start;max-width:100%}
+.venture h3{font-size:clamp(1.4rem,2.2vw,1.75rem)}
+.venture p{max-width:32em;opacity:.88}
+.venture .go{margin-top:auto;font-weight:600;display:inline-flex;gap:.5em;align-items:center;text-decoration:underline;text-underline-offset:.3em;text-decoration-thickness:2px}
+.venture:hover .go{text-decoration-thickness:4px}
+.v-ksk{background:var(--ksk-navy);border-top:var(--b) solid var(--ksk-royal)}
+.v-ksk .go{color:var(--ksk-sky)}
+.v-ec{background:#000;border-top:var(--b) solid var(--ec-gold)}
+.v-ec .go{color:var(--ec-gold)}
+.since{font-size:.9375rem;opacity:.75}
+@media (max-width:860px){.ventures{grid-template-columns:1fr}.venture{min-height:0}}
+
+/* journey */
+.journey{list-style:none;margin:clamp(2.5rem,5vw,4rem) 0 0;padding:0}
+.journey li{display:grid;grid-template-columns:minmax(7rem,3fr) minmax(0,9fr);gap:1rem clamp(1.5rem,4vw,4rem);padding:1.75rem 0;border-top:2px solid var(--ink)}
+.journey li:last-child{border-bottom:2px solid var(--ink)}
+.year{font-size:clamp(2rem,4vw,3.25rem);font-weight:700;line-height:1;font-variation-settings:"wdth" 125;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.journey h3{font-size:clamp(1.25rem,1.9vw,1.5rem)}
+.journey p{color:var(--graphite);margin-top:.5rem;max-width:40em}
+.creds{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.creds span{border:2px solid var(--ink);padding:.45rem .9rem;font-weight:600;font-size:.9375rem}
+@media (max-width:640px){.journey li{grid-template-columns:1fr}}
+
+/* community */
+.community{background:var(--fog)}
+.priorities{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem) clamp(2rem,5vw,5rem);margin-top:clamp(2.5rem,5vw,4rem)}
+.priority{position:relative;padding-top:calc(var(--b) + 1.25rem)}
+.priority::before{content:"";position:absolute;top:0;left:0;width:min(180px,40%);height:var(--b);background:var(--ink)}
+.priority p{margin-top:.6rem;color:var(--graphite);max-width:32em}
+.community .btn{margin-top:clamp(2.5rem,5vw,3.5rem)}
+.faith{margin-top:clamp(3.5rem,7vw,5.5rem);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,5vw,5rem);align-items:start;padding-top:2rem;border-top:2px solid var(--ink)}
+.faith p{color:#1d1c1a;max-width:36em}
+@media (max-width:760px){.priorities,.faith{grid-template-columns:1fr}}
+
+/* press */
+.press{list-style:none;margin:2.5rem 0 0;padding:0;display:grid;gap:0}
+.press a{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr) auto;gap:1rem 2rem;align-items:baseline;padding:1.5rem 0;border-top:2px solid var(--ink);text-decoration:none}
+.press li:last-child a{border-bottom:2px solid var(--ink)}
+.press .pub{font-weight:700;font-variation-settings:"wdth" 125;font-size:1.25rem}
+.press .ttl{color:var(--graphite)}
+.press .yr{font-variant-numeric:tabular-nums;font-weight:600}
+.press a:hover .ttl{color:var(--ink);text-decoration:underline;text-underline-offset:.3em}
+@media (max-width:640px){.press a{grid-template-columns:1fr auto}.press .ttl{grid-column:1/-1;grid-row:2}}
+
+/* contact */
+.contact{background:var(--ink);color:var(--paper)}
+.contact h2{font-size:clamp(3rem,8vw,6.5rem);letter-spacing:-.035em}
+.contact-grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2.5rem,6vw,6rem);margin-top:clamp(2rem,4vw,3rem)}
+.contact .lead-in{color:#cfcdc7;margin-top:0;margin-bottom:2rem}
+form{display:grid;gap:1.25rem}
+.field{display:grid;gap:.4rem}
+.field label{font-weight:600;font-size:.9375rem}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+input,select,textarea{font:inherit;font-size:1.0625rem;color:var(--paper);background:transparent;border:0;border-bottom:2px solid #8a8780;padding:.65rem 0;border-radius:0;width:100%}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#fff 50%),linear-gradient(135deg,#fff 50%,transparent 50%);background-position:calc(100% - 14px) 55%,calc(100% - 8px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2rem}
+select option{color:#000}
+textarea{min-height:140px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--paper)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--ksk-sky);outline-offset:4px}
+.contact .btn{background:var(--paper);color:var(--ink);border-color:var(--paper);justify-self:start}
+.contact .btn:hover{background:transparent;color:var(--paper)}
+.form-status{min-height:1.5em;color:#e6e4de}
+.form-status.err{color:#ffb4a8}
+.direct{display:grid;gap:2rem;align-content:start}
+.direct h3{font-size:1rem;font-variation-settings:"wdth" 100;font-weight:600;color:#a9a7a0;margin-bottom:.5rem}
+.direct a{text-decoration:none;font-size:1.25rem;font-weight:600;font-variation-settings:"wdth" 112}
+.direct a:hover{text-decoration:underline;text-underline-offset:.3em}
+.direct ul{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.direct small{display:block;color:#a9a7a0;font-size:.9375rem;margin-top:.15rem}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+
+.site-foot{background:var(--ink);color:#a9a7a0;padding:2.5rem 0 3rem;border-top:1px solid #2a2a2a;font-size:.9375rem}
+.site-foot .wrap{display:flex;flex-wrap:wrap;gap:1.25rem 2.5rem;align-items:center;justify-content:space-between}
+.site-foot svg{width:38px;height:auto}
+.site-foot nav{display:flex;flex-wrap:wrap;gap:1.5rem}
+.site-foot a{color:#e6e4de;text-decoration:none}
+.site-foot a:hover{text-decoration:underline}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="tf" viewBox="0 0 322 242"><rect x="0" y="0" width="322" height="38"/><rect x="80" y="77" width="38" height="165"/><rect x="135" y="102" width="187" height="38"/><rect x="135" y="102" width="38" height="140"/></symbol>
+</svg>
+
+<header class="wrap site-head">
+  <a class="brand" href="#top" aria-label="Tashima Freeman, home">
+    <svg viewBox="0 0 322 242" aria-hidden="true"><use href="#tf"/></svg>
+    <span>TASHIMA FREEMAN</span>
+  </a>
+  <button class="btn btn-line menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="#about">About</a>
+    <a href="#ventures">Companies</a>
+    <a href="#journey">Journey</a>
+    <a href="#community">Community</a>
+    <a class="btn btn-solid" href="#contact">Get in touch</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="bar bar-top" aria-hidden="true"></div>
+    <div class="bar bar-stem" aria-hidden="true"></div>
+    <div class="bar bar-fstem" aria-hidden="true"></div>
+    <div class="bar bar-farm" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <h1 id="hero-title"><span>Tashima</span> <span>Freeman</span></h1>
+      <div class="hero-foot">
+        <p class="lede">Accountant, founder, and community leader in South Fulton, Georgia. I help business owners get their finances in order, help professionals build their way out of corporate, and bring the same work home to my neighborhood.</p>
+        <div class="cta-row">
+          <a class="btn btn-solid" href="#contact">Get in touch</a>
+          <a class="btn btn-line" href="#ventures">See my companies</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="roles" aria-label="Roles">
+    <div class="wrap">
+      <ul>
+        <li>Accountant</li>
+        <li>Founder</li>
+        <li>Business coach</li>
+        <li>Community leader</li>
+        <li>Mother</li>
+        <li>Muslim</li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="block" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <figure class="portrait">
+        <div class="mark" aria-hidden="true"><svg viewBox="0 0 322 242"><use href="#tf"/></svg></div>
+        <!-- Add a current photo at assets/portrait.jpg; the monogram shows until then. -->
+        <img src="assets/portrait.jpg" alt="Tashima Freeman" onerror="this.remove()">
+      </figure>
+      <div>
+        <h2 id="about-title" class="visually-hidden">About Tashima</h2>
+        <p class="statement">My work starts with the numbers and ends with people: owners who can finally read their books, professionals who leave corporate with a plan, and neighbors who get a seat at the table.</p>
+        <div class="about-copy">
+          <p>I'm an accountant by training, with a bachelor's degree in accounting and an MBA in management. I spent my early career as an accountant, senior accountant, and financial analyst, then moved into production accounting for film, television, and music projects.</p>
+          <p>In 2020 I turned a hard season into KSK Tax &amp; Accounting Solutions, and reached six figures within nine months. A year later I started coaching professionals who wanted out of corporate, which grew into Elite Circle.</p>
+          <p>I'm raising my children in South Fulton, and I'm a Muslim woman whose faith shapes how I show up for my clients and my community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0" aria-labelledby="do-title">
+    <div class="wrap">
+      <h2 id="do-title">What I do</h2>
+      <div class="pillars">
+        <article class="pillar">
+          <h3>Accounting and tax</h3>
+          <p>Monthly bookkeeping, tax preparation and planning, and production accounting for small businesses and the creatives behind the scenes.</p>
+          <a href="https://kskaccounting.com/">Work with KSK</a>
+        </article>
+        <article class="pillar">
+          <h3>Coaching and consulting</h3>
+          <p>Exit strategies, offers, and sales plans for professionals ready to build their own business, plus brand strategy for growing organizations.</p>
+          <a href="https://enterelitecircle.com/">Work with Elite Circle</a>
+        </article>
+        <article class="pillar">
+          <h3>Community work</h3>
+          <p>Projects and partnerships for South Fulton's young people, seniors, and small business owners, and a push for city finances everyone can follow.</p>
+          <a href="#community">See the priorities</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ventures" style="padding-top:0" aria-labelledby="ventures-title">
+    <div class="wrap">
+      <h2 id="ventures-title">My companies</h2>
+      <div class="ventures">
+        <a class="venture v-ksk" href="https://kskaccounting.com/">
+          <img class="logo" src="assets/ksk-logo-light.png" alt="KSK Accounting logo" width="720" height="163">
+          <span class="since">Founded 2020</span>
+          <h3>KSK Tax &amp; Accounting Solutions</h3>
+          <p>A full-service accounting firm for small business owners and entertainment productions: bookkeeping, financial statements and KPI reports, tax preparation and planning, and production accounting.</p>
+          <span class="go">Visit kskaccounting.com</span>
+        </a>
+        <a class="venture v-ec" href="https://enterelitecircle.com/">
+          <img class="logo" src="assets/ec-logo-light.png" alt="Elite Circle Enterprises logo" width="900" height="211">
+          <span class="since">Coaching since 2021</span>
+          <h3>Elite Circle Enterprises</h3>
+          <p>Coaching and consulting for women in corporate careers who are ready to build a business of their own, and brand strategy for organizations that have outgrown their look.</p>
+          <span class="go">Visit enterelitecircle.com</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="journey" style="padding-top:0" aria-labelledby="journey-title">
+    <div class="wrap">
+      <h2 id="journey-title">The journey so far</h2>
+      <ol class="journey">
+        <li><span class="year">2013</span><div><h3>Starts her accounting career</h3><p>Goes on to hold accountant, senior accountant, and financial analyst roles inside large companies.</p></div></li>
+        <li><span class="year">2018</span><div><h3>Moves into entertainment</h3><p>Takes on production accounting for projects with budgets from $10,000 to $1 million.</p></div></li>
+        <li><span class="year">2020</span><div><h3>Founds KSK Tax &amp; Accounting Solutions</h3><p>Builds the firm to six figures within nine months, serving creatives and small business owners.</p></div></li>
+        <li><span class="year">2021</span><div><h3>Starts coaching</h3><p>Guides corporate professionals through building a brand and planning their exit.</p></div></li>
+        <li><span class="year">2022</span><div><h3>Forms Elite Circle Enterprises</h3><p>A small, woman-owned firm for coaching, consulting, and brand strategy.</p></div></li>
+        <li><span class="year">2025</span><div><h3>Runs for South Fulton City Council, District 6</h3><p>Her first campaign, built on youth access, open city finances, care for seniors, and safer streets.</p></div></li>
+      </ol>
+      <div class="creds" aria-label="Education">
+        <span>BA, Accounting</span>
+        <span>MBA, Management</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block community" id="community" aria-labelledby="community-title">
+    <div class="wrap">
+      <h2 id="community-title">For South Fulton</h2>
+      <p class="lead-in">In 2025 I ran for City Council in District 6. The campaign is over, but the priorities haven't changed, and I'm still working on them with neighbors, organizations, and local businesses.</p>
+      <div class="priorities">
+        <div class="priority">
+          <h3>Youth and families</h3>
+          <p>Free transportation, a makers space where young people learn real skills, and a free college tour program.</p>
+        </div>
+        <div class="priority">
+          <h3>Open city finances</h3>
+          <p>Budgets residents can read, clearer communication from City Hall, and full community access to city planning.</p>
+        </div>
+        <div class="priority">
+          <h3>Homes and elders</h3>
+          <p>A home repair support program, and Adopt a Granny, which pairs young people with the seniors on their street.</p>
+        </div>
+        <div class="priority">
+          <h3>Safer streets</h3>
+          <p>More streetlights where crime is highest, and a mental health crisis team that can de-escalate 911 calls.</p>
+        </div>
+      </div>
+      <a class="btn btn-solid" href="#contact" data-reason="Community partnership">Partner on a project</a>
+
+      <div class="faith">
+        <h3>Faith and family</h3>
+        <p>Before any title, I'm a mother. My faith as a Muslim woman keeps me grounded, honest with my clients, and committed to serving the people around me. Both are the reason I do this work in the city where my children are growing up.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="press-title">
+    <div class="wrap">
+      <h2 id="press-title">In the press</h2>
+      <ul class="press">
+        <li><a href="https://canvasrebel.com/meet-tashima-freeman/" target="_blank" rel="noopener"><span class="pub">CanvasRebel</span><span class="ttl">Meet Tashima Freeman: on losing a corporate job, rebuilding, and helping others start businesses</span><span class="yr">2022</span></a></li>
+        <li><a href="https://voyageatl.com/interview/meet-tashima-freeman-ksk-tax-accounting-solutions-near-airport/" target="_blank" rel="noopener"><span class="pub">VoyageATL</span><span class="ttl">Meet Tashima Freeman of KSK Tax &amp; Accounting Solutions</span><span class="yr">2020</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Let's talk.</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="lead-in">Speaking invitations, interviews, business questions, community projects. Send a note and I'll get back to you.</p>
+          <form id="contact-form" data-endpoint="" data-email="hello@tashimafreeman.com" novalidate>
+            <div class="row2">
+              <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+              <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+            </div>
+            <div class="field">
+              <label for="f-reason">What's this about?</label>
+              <select id="f-reason" name="reason">
+                <option>Accounting or taxes</option>
+                <option>Business coaching</option>
+                <option>Speaking or interview</option>
+                <option>Community partnership</option>
+                <option selected>Something else</option>
+              </select>
+            </div>
+            <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" required></textarea></div>
+            <button class="btn" type="submit">Send message</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+        <aside class="direct" aria-label="Other ways to reach Tashima">
+          <div>
+            <h3>Email</h3>
+            <a href="mailto:hello@tashimafreeman.com">hello@tashimafreeman.com</a>
+          </div>
+          <div>
+            <h3>Follow along</h3>
+            <ul>
+              <li><a href="https://www.instagram.com/tashimafreeman" target="_blank" rel="noopener">Instagram</a><small>@tashimafreeman</small></li>
+              <li><a href="https://www.facebook.com/tashimafreeman" target="_blank" rel="noopener">Facebook</a><small>/tashimafreeman</small></li>
+              <li><a href="https://www.linkedin.com/in/tashimafreeman" target="_blank" rel="noopener">LinkedIn</a><small>/in/tashimafreeman</small></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Need an accountant?</h3>
+            <a href="https://kskaccounting.com/#contact">Book with KSK</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <svg viewBox="0 0 322 242" fill="#fff" aria-hidden="true"><use href="#tf"/></svg>
+    <nav aria-label="Footer">
+      <a href="https://kskaccounting.com/">KSK Accounting</a>
+      <a href="https://enterelitecircle.com/">Elite Circle</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p style="margin:0">© <span id="yr">2026</span> Tashima Freeman</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var btn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open);
+  });
+  nav.addEventListener('click', function(e){ if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
+
+  // Buttons that pre-select a reason in the contact form
+  document.querySelectorAll('[data-reason]').forEach(function(a){
+    a.addEventListener('click', function(){ var s = document.getElementById('f-reason'); s.value = a.dataset.reason; });
+  });
+
+  // Contact form: posts to data-endpoint (e.g. Formspree) when set, otherwise opens the visitor's email app.
+  var form = document.getElementById('contact-form'), status = form.querySelector('.form-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    status.classList.remove('err');
+    var missing = [].filter.call(form.querySelectorAll('[required]'), function(f){ return !f.value.trim(); });
+    var email = form.email.value.trim();
+    if (missing.length) { var n = {name:'your name', email:'your email', message:'a message'}, parts = missing.map(function(f){ return n[f.name]; }); status.textContent = 'Add ' + (parts.length > 1 ? parts.slice(0,-1).join(', ') + (parts.length > 2 ? ',' : '') + ' and ' + parts[parts.length-1] : parts[0]) + ' to send.'; status.classList.add('err'); missing[0].focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Check the email address; it needs to look like name@example.com.'; status.classList.add('err'); form.email.focus(); return; }
+    var endpoint = form.dataset.endpoint;
+    if (endpoint) {
+      status.textContent = 'Sending…';
+      fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+        .then(function(r){ if (!r.ok) throw 0; form.reset(); status.textContent = 'Message sent. Tashima will be in touch soon.'; })
+        .catch(function(){ status.textContent = 'The message didn’t send. Email ' + form.dataset.email + ' directly.'; status.classList.add('err'); });
+    } else {
+      var subject = form.reason.value + ' — from ' + form.name.value.trim();
+      var body = form.message.value.trim() + '\n\n' + form.name.value.trim() + '\n' + email;
+      window.location.href = 'mailto:' + form.dataset.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      status.textContent = 'Your email app should open with the message ready to send. If it doesn’t, email ' + form.dataset.email + '.';
+    }
+  });
+})();
+</script>
+</body>
+</html>
