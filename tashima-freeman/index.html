@@ -431,7 +431,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
       <div class="contact-grid">
         <div>
           <p class="lead-in">Speaking invitations, interviews, business questions, community projects. Send a note and I'll get back to you.</p>
-          <form id="contact-form" data-endpoint="" data-email="hello@tashimafreeman.com" novalidate>
+          <form id="contact-form" data-email="contact@tashimafreeman.com" novalidate>
+            <div style="position:absolute;left:-9999px" aria-hidden="true"><label>Leave this empty<input name="company_website" tabindex="-1" autocomplete="off"></label></div>
             <div class="row2">
               <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
               <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
@@ -454,7 +455,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
         <aside class="direct" aria-label="Other ways to reach Tashima">
           <div>
             <h3>Email</h3>
-            <a href="mailto:hello@tashimafreeman.com">hello@tashimafreeman.com</a>
+            <a href="mailto:contact@tashimafreeman.com">contact@tashimafreeman.com</a>
           </div>
           <div>
             <h3>Follow along</h3>
@@ -501,8 +502,9 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
     a.addEventListener('click', function(){ var s = document.getElementById('f-reason'); s.value = a.dataset.reason; });
   });
 
-  // Contact form: posts to data-endpoint (e.g. Formspree) when set, otherwise opens the visitor's email app.
-  var form = document.getElementById('contact-form'), status = form.querySelector('.form-status');
+  // Contact form: sends through /api/inquiry (Resend). Falls back to a direct email link on failure.
+  var form = document.getElementById('contact-form'), status = form.querySelector('.form-status'), startedAt = Date.now();
+  var sendBtn = form.querySelector('button[type=submit]');
   form.addEventListener('submit', function(e){
     e.preventDefault();
     status.classList.remove('err');
@@ -510,18 +512,15 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
     var email = form.email.value.trim();
     if (missing.length) { var n = {name:'your name', email:'your email', message:'a message'}, parts = missing.map(function(f){ return n[f.name]; }); status.textContent = 'Add ' + (parts.length > 1 ? parts.slice(0,-1).join(', ') + (parts.length > 2 ? ',' : '') + ' and ' + parts[parts.length-1] : parts[0]) + ' to send.'; status.classList.add('err'); missing[0].focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Check the email address; it needs to look like name@example.com.'; status.classList.add('err'); form.email.focus(); return; }
-    var endpoint = form.dataset.endpoint;
-    if (endpoint) {
-      status.textContent = 'Sending…';
-      fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-        .then(function(r){ if (!r.ok) throw 0; form.reset(); status.textContent = 'Message sent. Tashima will be in touch soon.'; })
-        .catch(function(){ status.textContent = 'The message didn’t send. Email ' + form.dataset.email + ' directly.'; status.classList.add('err'); });
-    } else {
-      var subject = form.reason.value + ' — from ' + form.name.value.trim();
-      var body = form.message.value.trim() + '\n\n' + form.name.value.trim() + '\n' + email;
-      window.location.href = 'mailto:' + form.dataset.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      status.textContent = 'Your email app should open with the message ready to send. If it doesn’t, email ' + form.dataset.email + '.';
-    }
+    var payload = { site: 'tashimafreeman.com', summary: form.reason.value, priority: '', hp: form.company_website.value, elapsed: Date.now() - startedAt,
+      contact: { name: form.name.value.trim(), email: email },
+      fields: [{ label: 'About', value: form.reason.value }, { label: 'Message', value: form.message.value.trim() }] };
+    sendBtn.disabled = true; status.textContent = 'Sending…';
+    fetch('/api/inquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ if (!r.ok || !j.ok) throw 0; }); })
+      .then(function(){ form.reset(); startedAt = Date.now(); status.textContent = 'Message sent. Tashima will be in touch soon, and a confirmation is on its way to your inbox.'; })
+      .catch(function(){ status.innerHTML = 'The message didn’t send. Email <a href="mailto:' + form.dataset.email + '" style="color:inherit">' + form.dataset.email + '</a> directly.'; status.classList.add('err'); })
+      .then(function(){ sendBtn.disabled = false; });
   });
 })();
 </script>
