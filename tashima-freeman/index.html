@@ -164,12 +164,10 @@ section{scroll-margin-top:1rem}
 .v-ec{background:#000;border-top:var(--b) solid var(--ec-gold)}
 .v-ec .go{color:var(--ec-gold)}
 .since{font-size:.9375rem;opacity:.75}
-.v-fha{grid-column:1/-1;min-height:0;background:#14181d;border-top:var(--b) solid transparent;border-image:linear-gradient(90deg,#d63d12 50%,#0f74b8 50%) 1;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:1.25rem clamp(1.5rem,4vw,3rem)}
-.v-fha .fha-brand{display:flex;align-items:center;gap:.9rem;line-height:1}
-.v-fha .fha-brand svg{width:56px;height:56px;flex:none}
-.v-fha .fha-brand b{display:block;font-size:1.9rem;font-weight:700;font-variation-settings:"wdth" 75;letter-spacing:.01em}
-.v-fha .fha-brand small{display:block;font-size:.85rem;font-weight:600;letter-spacing:.14em;opacity:.75;margin-top:.25rem}
-.v-fha .go{margin-top:0;color:#62bdf5;white-space:nowrap}
+.v-fha{grid-column:1/-1;min-height:0;background:#550000;border-top:var(--b) solid #949494;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:1.25rem clamp(1.5rem,4vw,3rem)}
+.v-fha .fha-logo{width:clamp(160px,18vw,220px);height:auto}
+.v-fha .go{margin-top:0;color:#fff;white-space:nowrap}
+.v-fha p{opacity:.9}
 .v-fha h3{font-size:clamp(1.25rem,1.8vw,1.5rem)}
 .v-fha p{margin-top:.4rem}
 @media (max-width:860px){.ventures{grid-template-columns:1fr}.venture{min-height:0}.v-fha{grid-template-columns:1fr}}
@@ -356,10 +354,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px soli
           <span class="go">Visit enterelitecircle.com</span>
         </a>
         <a class="venture v-fha" href="https://freemanhvacus.com/">
-          <span class="fha-brand" aria-hidden="true">
-            <svg viewBox="0 0 64 64"><defs><clipPath id="fhac"><circle cx="32" cy="32" r="30"/></clipPath></defs><g clip-path="url(#fhac)"><rect width="32" height="64" fill="#d63d12"/><rect x="32" width="32" height="64" fill="#0f74b8"/></g><path d="M22 16h22v7H30v6h12v7H30v12h-8z" fill="#fff"/></svg>
-            <span><b>Freeman</b><small>HEATING &amp; AIR</small></span>
-          </span>
+          <img class="fha-logo" src="assets/fha-logo-light.png" alt="Freeman Heating &amp; Air logo" width="520" height="276">
           <div>
             <span class="since">Family business</span>
             <h3>Freeman Heating &amp; Air</h3>

@@ -15,8 +15,6 @@ Four static sites, one folder per domain, each deployed by its own Vercel projec
 - Personal site: add `tashima-freeman/assets/portrait.jpg` (portrait crop, about 4:5). The TF monogram shows until it exists.
 - KSK site: add `ksk-accounting/assets/founder.jpg` (square). The KSK monogram shows until it exists.
 
-- Freeman Heating & Air: the header and footer use a placeholder mark and text wordmark. Add the official logo at `freeman-hvac/assets/logo.png` and swap it in where the HTML comment in the header says.
-
 **2. Email addresses** (placeholders on the new domains; search and replace in each `index.html`)
 - `hello@tashimafreeman.com`
 - `info@kskaccounting.com`
