@@ -1,12 +1,13 @@
 # tashima-co
 
-Three static sites, one folder per domain, each deployed by its own Vercel project. Pushing to `main` redeploys all three. No build step and no third-party font requests; fonts are self-hosted in `assets/fonts/`.
+Four static sites, one folder per domain, each deployed by its own Vercel project. Pushing to `main` redeploys all three. No build step and no third-party font requests; fonts are self-hosted in `assets/fonts/`.
 
 | Folder | Domain | Vercel project (Root Directory = folder) |
 | --- | --- | --- |
 | `tashima-freeman/` | tashimafreeman.com | tashima-co-tashima-freeman |
 | `ksk-accounting/` | kskaccounting.com | tashima-co-ksk-accounting |
 | `elite-circle/` | enterelitecircle.com | tashima-co-elite-circle |
+| `freeman-hvac/` | freemanhvacus.com | tashima-co-freeman-hvac |
 
 ## Before going live
 
@@ -14,10 +15,13 @@ Three static sites, one folder per domain, each deployed by its own Vercel proje
 - Personal site: add `tashima-freeman/assets/portrait.jpg` (portrait crop, about 4:5). The TF monogram shows until it exists.
 - KSK site: add `ksk-accounting/assets/founder.jpg` (square). The KSK monogram shows until it exists.
 
+- Freeman Heating & Air: the header and footer use a placeholder mark and text wordmark. Add the official logo at `freeman-hvac/assets/logo.png` and swap it in where the HTML comment in the header says.
+
 **2. Email addresses** (placeholders on the new domains; search and replace in each `index.html`)
 - `hello@tashimafreeman.com`
 - `info@kskaccounting.com`
 - `hello@enterelitecircle.com`
+- `service@freemanhvacus.com`
 
 **3. Contact forms**
 Each form has `data-endpoint=""`. Left empty, submitting opens the visitor's email app with the message pre-filled. To receive submissions directly, create a free form at a service like Formspree and paste its URL into `data-endpoint`, e.g. `data-endpoint="https://formspree.io/f/abcd1234"`.
