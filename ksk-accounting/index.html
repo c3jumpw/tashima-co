@@ -1,1 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KSK Tax &amp; Accounting Solutions | Bookkeeping, Tax and Production Accounting</title>
+<meta name="description" content="KSK Tax & Accounting Solutions handles monthly bookkeeping, tax preparation and planning, and production accounting for small businesses and entertainment productions in Metro Atlanta.">
+<link rel="canonical" href="https://kskaccounting.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kskaccounting.com/">
+<meta property="og:title" content="KSK Tax & Accounting Solutions">
+<meta property="og:description" content="Bookkeeping, tax, and production accounting for small businesses and the creatives behind the scenes.">
+<meta property="og:image" content="https://kskaccounting.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="theme-color" content="#01172e">
+<link rel="preload" href="assets/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "KSK Tax & Accounting Solutions",
+  "url": "https://kskaccounting.com/",
+  "telephone": "+1-404-781-7638",
+  "logo": "https://kskaccounting.com/assets/logo.png",
+  "areaServed": "Metro Atlanta, Georgia",
+  "address": {"@type": "PostalAddress", "addressRegion": "GA", "addressCountry": "US"},
+  "founder": {"@type": "Person", "name": "Tashima Freeman", "url": "https://tashimafreeman.com/"},
+  "foundingDate": "2020"
+}
+</script>
+<style>
+@font-face{font-family:"Bodoni Moda";src:url(assets/fonts/bodoni-moda.woff2) format("woff2-variations"),url(assets/fonts/bodoni-moda.woff2) format("woff2");font-weight:400 900;font-display:swap}
+@font-face{font-family:"Jost";src:url(assets/fonts/jost.woff2) format("woff2-variations"),url(assets/fonts/jost.woff2) format("woff2");font-weight:100 900;font-display:swap}
+:root{
+  --navy:#01172e;
+  --navy-2:#0a2747;
+  --royal:#0041c3;
+  --sky:#a1d4ff;
+  --paper:#fff;
+  --mist:#f0f4fa;
+  --slate:#4a5872;
+  --line:#d3dcea;
+  --maxw:1200px;
+  --gutter:clamp(20px,4vw,40px);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--navy);font-family:"Jost",system-ui,sans-serif;font-size:1.125rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--royal);outline-offset:3px}
+.on-dark :focus-visible{outline-color:var(--sky)}
+.skip{position:absolute;left:-999px;top:0;background:var(--navy);color:#fff;padding:.6rem 1rem;z-index:10}
+.skip:focus{left:var(--gutter)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{margin:0;font-family:"Bodoni Moda",Didot,serif;font-weight:600;line-height:1.08;letter-spacing:-.005em;font-optical-sizing:auto;text-wrap:balance}
+h2{font-size:clamp(2.1rem,4vw,3.25rem)}
+h3{font-size:1.5rem;font-weight:600}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:.75rem 1.6rem;border:2px solid var(--royal);background:var(--royal);color:#fff;
+  font:500 1.0625rem/1 "Jost",sans-serif;letter-spacing:.01em;text-decoration:none;cursor:pointer;border-radius:2px;transition:background .15s,border-color .15s,color .15s}
+.btn:hover{background:var(--navy);border-color:var(--navy)}
+.btn-ghost{background:transparent;border-color:var(--sky);color:#fff}
+.btn-ghost:hover{background:var(--sky);color:var(--navy);border-color:var(--sky)}
+.on-dark .btn:not(.btn-ghost){box-shadow:0 0 0 2px var(--sky)}
+.on-dark .btn:not(.btn-ghost):hover{background:#fff;color:var(--navy);border-color:#fff}
 
+/* header */
+.site-head{position:relative;background:#fff;border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:84px}
+.logo img{height:46px;width:auto}
+.nav{display:flex;align-items:center;gap:clamp(1rem,2vw,1.75rem)}
+.nav a{text-decoration:none;font-weight:500;font-size:1.0625rem}
+.nav a:not(.btn):hover{color:var(--royal)}
+.nav .tel{font-variant-numeric:tabular-nums;color:var(--slate)}
+.nav .btn{min-height:46px;padding:.6rem 1.2rem}
+.menu-btn{display:none;background:none;border:2px solid var(--navy);color:var(--navy);min-height:44px;padding:.4rem 1rem;font:500 1rem "Jost",sans-serif;cursor:pointer;border-radius:2px}
+@media (max-width:980px){
+  .logo img{height:38px}
+  .menu-btn{display:inline-flex;align-items:center}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;z-index:5;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:.5rem var(--gutter) 1.25rem;border-bottom:3px solid var(--royal)}
+  .nav.open{display:flex}
+  .nav a{padding:.85rem 0;border-bottom:1px solid var(--line)}
+  .nav .btn{margin-top:1rem;border-bottom:2px solid var(--royal)}
+}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:6px;background:var(--royal)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2.5rem,6vw,5rem);align-items:center;padding-block:clamp(4rem,9vw,7.5rem)}
+.hero h1{font-size:clamp(2.75rem,5.6vw,5rem);font-weight:500;line-height:1.02;letter-spacing:-.01em;max-width:12em}
+.hero .sub{margin-top:1.5rem;font-size:clamp(1.125rem,1.5vw,1.25rem);color:#c9d6ea;max-width:34em}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.25rem}
+
+/* the close sheet */
+.sheet{background:#fff;color:var(--navy);padding:clamp(1.5rem,3vw,2.25rem);position:relative;box-shadow:0 0 0 2px var(--sky),18px 18px 0 0 var(--royal);max-width:460px;justify-self:end;width:100%}
+.sheet header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding-bottom:1rem;border-bottom:2px solid var(--navy)}
+.sheet .title{font-family:"Bodoni Moda",serif;font-size:1.6rem;font-weight:600;line-height:1.1}
+.sheet .note{font-size:.9375rem;color:var(--slate);margin-top:.3rem}
+.sheet header img{width:64px;height:auto;flex:none}
+.sheet ul{list-style:none;margin:0;padding:0}
+.sheet li{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 0;border-bottom:1px solid var(--line);font-size:1.0625rem}
+.sheet li svg{width:22px;height:22px;flex:none}
+.sheet .total{display:flex;justify-content:space-between;align-items:baseline;padding-top:1rem;font-weight:600}
+.sheet .total span:last-child{font-family:"Bodoni Moda",serif;font-size:1.25rem;color:var(--royal)}
+@media (prefers-reduced-motion:no-preference){
+  .sheet li svg path{stroke-dasharray:24;stroke-dashoffset:24;animation:tick .35s ease-out forwards}
+  .sheet li:nth-child(1) svg path{animation-delay:.5s}
+  .sheet li:nth-child(2) svg path{animation-delay:.75s}
+  .sheet li:nth-child(3) svg path{animation-delay:1s}
+  .sheet li:nth-child(4) svg path{animation-delay:1.25s}
+  .sheet li:nth-child(5) svg path{animation-delay:1.5s}
+  @keyframes tick{to{stroke-dashoffset:0}}
+}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.sheet{justify-self:start;margin-right:18px}}
+
+/* facts */
+.facts{border-bottom:1px solid var(--line)}
+.facts ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.facts li{padding:1.75rem 1.25rem 1.75rem 0;display:grid;gap:.15rem}
+.facts li+li{padding-left:1.5rem;border-left:1px solid var(--line)}
+.facts strong{font-family:"Bodoni Moda",serif;font-size:1.6rem;font-weight:600;line-height:1.15}
+.facts span{color:var(--slate);font-size:1rem}
+.facts .plus{font-family:"Jost",sans-serif;font-weight:500;color:var(--navy);font-size:1em}
+@media (max-width:900px){.facts ul{grid-template-columns:1fr 1fr}.facts li:nth-child(3){padding-left:0;border-left:0}.facts li:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:480px){.facts ul{grid-template-columns:1fr}.facts li,.facts li+li{padding-left:0;border-left:0}.facts li+li{border-top:1px solid var(--line)}}
+
+section{scroll-margin-top:1rem}
+.block{padding:clamp(4.5rem,9vw,7.5rem) 0}
+.intro{max-width:38em;margin-top:1rem;color:var(--slate);font-size:1.1875rem}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(2rem,5vw,4.5rem);margin-top:clamp(2.5rem,5vw,3.5rem)}
+.svc{display:grid;grid-template-columns:56px minmax(0,1fr);gap:1.25rem;padding:2rem 0;border-top:1px solid var(--line)}
+.svc img,.svc svg{width:56px;height:56px;object-fit:contain}
+.svc h3{font-size:1.5rem}
+.svc p{color:var(--slate);margin-top:.5rem;max-width:30em}
+@media (max-width:820px){.svc-grid{grid-template-columns:1fr}}
+
+/* who we serve */
+.serve{background:var(--mist)}
+.serve-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2vw,1.5rem);margin-top:clamp(2.5rem,5vw,3.5rem)}
+.aud{display:flex;flex-direction:column;background:#fff}
+.aud .photo{aspect-ratio:16/10;overflow:hidden}
+.aud .photo img{width:100%;height:100%;object-fit:cover}
+.aud .body{padding:clamp(1.5rem,3vw,2.5rem);display:grid;gap:.9rem}
+.aud p{color:var(--slate)}
+.aud ul{margin:.25rem 0 0;padding:0;list-style:none;display:grid;gap:.45rem}
+.aud li{padding-left:1.5rem;position:relative}
+.aud li::before{content:"";position:absolute;left:0;top:.62em;width:.7rem;height:2px;background:var(--royal)}
+.aud-film{background:var(--navy);color:#fff}
+.aud-film p{color:#c9d6ea}
+.aud-film li::before{background:var(--sky)}
+.aud-film .marquee{aspect-ratio:16/10;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(1.5rem,3vw,2.5rem);border-bottom:1px solid #1f3a5c;
+  background:radial-gradient(circle at 85% 20%, rgba(0,65,195,.55), transparent 55%)}
+.aud-film .marquee span{font-family:"Bodoni Moda",serif;font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1;font-weight:500}
+.aud-film .marquee small{display:block;margin-top:.9rem;color:var(--sky);font-size:1rem}
+@media (max-width:820px){.serve-grid{grid-template-columns:1fr}}
+
+/* steps */
+.steps{list-style:none;margin:clamp(2.5rem,5vw,3.5rem) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1.5rem,3vw,2.5rem);counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid var(--navy);padding-top:1.25rem;display:grid;gap:.6rem;align-content:start}
+.steps li::before{content:counter(s);font-family:"Bodoni Moda",serif;font-size:2.75rem;line-height:1;color:var(--royal);font-weight:500}
+.steps h3{font-size:1.3rem}
+.steps p{color:var(--slate);font-size:1.0625rem}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* founder */
+.founder .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2rem,6vw,5.5rem);align-items:center}
+.founder figure{margin:0;position:relative;aspect-ratio:1;background:var(--mist);box-shadow:16px 16px 0 0 var(--navy);max-width:460px}
+.founder figure .mono{position:absolute;inset:22%;width:56%;height:auto;margin:auto;object-fit:contain}
+.founder figure img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.founder .role{color:var(--royal);font-weight:500;margin-top:.5rem}
+.founder .copy{display:grid;gap:1rem;margin-top:1.5rem;max-width:36em;color:#24324a}
+.founder .creds{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.founder .creds span{border:1px solid var(--navy);padding:.35rem .85rem;font-size:.9375rem;font-weight:500}
+.link{display:inline-block;margin-top:1.75rem;font-weight:500;color:var(--royal);text-underline-offset:.3em;text-decoration-thickness:2px}
+.link:hover{color:var(--navy)}
+@media (max-width:820px){.founder .wrap{grid-template-columns:1fr}.founder figure{max-width:340px;margin-right:16px}}
+
+/* resource */
+.resource{background:var(--navy);color:#fff}
+.resource .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2rem,5vw,4.5rem);align-items:center;padding-block:clamp(3.5rem,7vw,5.5rem)}
+.resource img{width:100%;height:auto;box-shadow:0 0 0 2px var(--sky)}
+.resource h2{font-size:clamp(2rem,3.6vw,2.75rem)}
+.resource p{color:#c9d6ea;margin:1rem 0 2rem;max-width:30em}
+@media (max-width:820px){.resource .wrap{grid-template-columns:1fr}}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(2.5rem,6vw,5.5rem)}
+.details{display:grid;gap:1.6rem;margin-top:2rem}
+.details h3{font-family:"Jost",sans-serif;font-size:1rem;font-weight:500;color:var(--slate);letter-spacing:0}
+.details a,.details p{font-size:1.25rem;font-weight:500;text-decoration:none}
+.details a:hover{color:var(--royal);text-decoration:underline;text-underline-offset:.25em}
+form{display:grid;gap:1.2rem;background:var(--mist);padding:clamp(1.5rem,4vw,2.75rem);border-top:6px solid var(--royal)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.field{display:grid;gap:.4rem}
+.field label{font-weight:500;font-size:1rem}
+input,select,textarea{font:inherit;font-size:1.0625rem;color:var(--navy);background:#fff;border:1px solid #b9c6da;border-radius:2px;padding:.75rem .85rem;width:100%}
+textarea{min-height:140px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--royal);outline-offset:0;border-color:var(--royal)}
+form .btn{justify-self:start}
+.form-status{min-height:1.5em;color:var(--slate)}
+.form-status.err{color:#b42318}
+@media (max-width:860px){.contact .wrap{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
+
+.site-foot{background:var(--navy);color:#c9d6ea;font-size:.9375rem}
+.site-foot .wrap{display:flex;flex-wrap:wrap;gap:1.5rem 3rem;align-items:center;justify-content:space-between;padding-block:2.75rem}
+.site-foot img{height:40px;width:auto}
+.site-foot nav{display:flex;flex-wrap:wrap;gap:1.5rem}
+.site-foot a{color:#fff;text-decoration:none}
+.site-foot a:hover{color:var(--sky)}
+.site-foot p{margin:0}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="#top"><img src="assets/logo.png" alt="KSK Accounting" width="760" height="172"></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#serve">Who we serve</a>
+      <a href="#founder">About</a>
+      <a class="tel" href="tel:+14047817638">(404) 781-7638</a>
+      <a class="btn" href="#contact">Book a consultation</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero on-dark" id="top" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <h1 id="hero-title">Your books, closed and clear every month.</h1>
+        <p class="sub">KSK Tax &amp; Accounting Solutions does the bookkeeping, taxes, and production accounting for small business owners and the creatives working behind the scenes in entertainment, so you always know where your money stands.</p>
+        <div class="ctas">
+          <a class="btn" href="#contact">Book a consultation</a>
+          <a class="btn btn-ghost" href="#services">See services</a>
+        </div>
+      </div>
+      <div class="sheet" role="img" aria-label="Example of what's included in a monthly close: reconciled accounts, categorized transactions, financial statements, KPI and cash report, and a tax check-in.">
+        <header>
+          <div>
+            <div class="title">Your monthly close</div>
+            <div class="note">Included with monthly bookkeeping</div>
+          </div>
+          <img src="assets/monogram.png" alt="" width="600" height="364">
+        </header>
+        <ul aria-hidden="true">
+          <li>Bank and card accounts reconciled<svg viewBox="0 0 24 24" fill="none" stroke="#0041c3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></li>
+          <li>Transactions categorized<svg viewBox="0 0 24 24" fill="none" stroke="#0041c3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></li>
+          <li>Profit &amp; loss and balance sheet<svg viewBox="0 0 24 24" fill="none" stroke="#0041c3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></li>
+          <li>KPI and cash report<svg viewBox="0 0 24 24" fill="none" stroke="#0041c3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></li>
+          <li>Tax check-in<svg viewBox="0 0 24 24" fill="none" stroke="#0041c3" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 6.5"/></svg></li>
+        </ul>
+        <div class="total" aria-hidden="true"><span>Where your money stands</span><span>Clear</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="wrap">
+      <ul>
+        <li><strong>13<span class="plus">+</span> years</strong><span>in accounting</span></li>
+        <li><strong>Since 2020</strong><span>serving owners and creatives</span></li>
+        <li><strong>$10K to $1M</strong><span>production budgets managed</span></li>
+        <li><strong>Metro Atlanta</strong><span>woman-owned and local</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="block" id="services" aria-labelledby="svc-title">
+    <div class="wrap">
+      <h2 id="svc-title">What we do</h2>
+      <p class="intro">One firm for the books, the taxes, and the questions in between.</p>
+      <div class="svc-grid">
+        <article class="svc">
+          <img src="assets/icon-bookkeeping.png" alt="" width="160" height="160">
+          <div><h3>Monthly bookkeeping</h3><p>Reconciled accounts, categorized transactions, and monthly financial statements with KPI and cash reports you can actually use.</p></div>
+        </article>
+        <article class="svc">
+          <img src="assets/icon-tax.png" alt="" width="160" height="160">
+          <div><h3>Tax preparation and planning</h3><p>Business and personal returns, plus planning through the year so tax season brings no surprises.</p></div>
+        </article>
+        <article class="svc">
+          <svg viewBox="0 0 64 64" fill="none" stroke="#0041c3" stroke-width="4" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="26" width="52" height="32"/><path d="M6 26l4-14 48-6 0 0-2 14"/><path d="M18 10.5l6 13M32 8.7l6 13M46 7l6 13"/><path d="M16 38h32M16 47h20"/></svg>
+          <div><h3>Production accounting</h3><p>Key production accounting for film, TV, music, and event budgets from $10,000 to $1 million: budgets, cost reports, vendor payments, and wrap.</p></div>
+        </article>
+        <article class="svc">
+          <img src="assets/icon-cleanup.png" alt="" width="160" height="142">
+          <div><h3>Clean-up and catch-up</h3><p>Behind on your books? We sort out the past months so you're ready for taxes, a lender, or an investor.</p></div>
+        </article>
+        <article class="svc">
+          <img src="assets/icon-advisory.png" alt="" width="160" height="160">
+          <div><h3>Business advisory</h3><p>Straight answers on structure, pricing, and cash flow from an accountant who runs businesses herself.</p></div>
+        </article>
+        <article class="svc">
+          <img src="assets/icon-funding.png" alt="" width="160" height="160">
+          <div><h3>Funding readiness</h3><p>Lender-ready financial statements, plus our free list of more than 200 small business grants.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block serve" id="serve" aria-labelledby="serve-title">
+    <div class="wrap">
+      <h2 id="serve-title">Who we serve</h2>
+      <div class="serve-grid">
+        <article class="aud">
+          <div class="photo"><img src="assets/team.webp" alt="A small business team reviewing work together at a table" width="780" height="780" loading="lazy"></div>
+          <div class="body">
+            <h3>Small business owners</h3>
+            <p>Owners across industries who would rather run the business than chase receipts.</p>
+            <ul>
+              <li>Monthly books and financial statements</li>
+              <li>Business and personal tax returns</li>
+              <li>Clean-up when you've fallen behind</li>
+            </ul>
+          </div>
+        </article>
+        <article class="aud aud-film">
+          <div class="marquee"><span>Film, TV, music, and live events</span><small>Production accounting since 2018</small></div>
+          <div class="body">
+            <h3>The creatives behind the scenes</h3>
+            <p>Producers, production companies, and independent creatives who need numbers they can trust on set and after wrap.</p>
+            <ul>
+              <li>Production budgets and cost reports</li>
+              <li>Vendor payments and reconciliations</li>
+              <li>Wrap books and tax planning for creatives</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="steps-title">
+    <div class="wrap">
+      <h2 id="steps-title">How it works</h2>
+      <ol class="steps">
+        <li><h3>Book a consultation</h3><p>A short call about your business, your books, and what you need help with.</p></li>
+        <li><h3>We review your numbers</h3><p>We look at where your books stand today and what it will take to get them current.</p></li>
+        <li><h3>Get a clear plan and quote</h3><p>You'll know what's included and what it costs before any work begins.</p></li>
+        <li><h3>Stay current every month</h3><p>We close your books each month and keep you ready for tax time.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block founder" id="founder" style="padding-top:0" aria-labelledby="founder-title">
+    <div class="wrap">
+      <figure>
+        <img class="mono" src="assets/monogram.png" alt="" width="600" height="364">
+        <!-- Add a current photo at assets/founder.jpg; the monogram shows until then. -->
+        <img class="photo" src="assets/founder.jpg" alt="Tashima Freeman, founder of KSK" onerror="this.remove()">
+      </figure>
+      <div>
+        <h2 id="founder-title">Meet Tashima Freeman</h2>
+        <p class="role">Founder and accountant</p>
+        <div class="copy">
+          <p>Tashima has wanted her own accounting firm since high school. She built her experience as an accountant, senior accountant, and financial analyst, then specialized in production accounting for entertainment.</p>
+          <p>She opened KSK in 2020 to give small business owners and creatives the kind of financial clarity big companies take for granted, delivered by someone who knows what it's like to run a business.</p>
+        </div>
+        <div class="creds"><span>BA, Accounting</span><span>MBA, Management</span></div>
+        <a class="link" href="https://tashimafreeman.com/">More about Tashima</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="resource on-dark" aria-labelledby="res-title">
+    <div class="wrap">
+      <img src="assets/grant-list.webp" alt="Free business grant list from KSK Tax and Accounting Solutions, over 200 grants included" width="750" height="479" loading="lazy">
+      <div>
+        <h2 id="res-title">The free business grant list</h2>
+        <p>More than 200 grants for small business owners, gathered in one list. Ask for a copy and we'll send it over.</p>
+        <a class="btn" href="#contact" data-reason="Free grant list">Request the grant list</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div>
+        <h2 id="contact-title">Book a consultation</h2>
+        <p class="intro">Tell us a little about your business and we'll reach out to set up a time.</p>
+        <div class="details">
+          <div><h3>Call</h3><a href="tel:+14047817638">(404) 781-7638</a></div>
+          <div><h3>Email</h3><a href="mailto:info@kskaccounting.com">info@kskaccounting.com</a></div>
+          <div><h3>Location</h3><p>Metro Atlanta, Georgia</p></div>
+        </div>
+      </div>
+      <form id="contact-form" data-endpoint="" data-email="info@kskaccounting.com" novalidate>
+        <div class="row2">
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field">
+            <label for="f-reason">I need help with</label>
+            <select id="f-reason" name="reason">
+              <option>Monthly bookkeeping</option>
+              <option>Tax preparation or planning</option>
+              <option>Production accounting</option>
+              <option>Clean-up or catch-up</option>
+              <option>Business advisory</option>
+              <option>Free grant list</option>
+              <option>Something else</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="f-msg">Tell us about your business</label><textarea id="f-msg" name="message" required></textarea></div>
+        <button class="btn" type="submit">Request a consultation</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <img src="assets/logo-light.png" alt="KSK Accounting" width="760" height="172">
+    <nav aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+      <a href="https://tashimafreeman.com/">Tashima Freeman</a>
+      <a href="https://enterelitecircle.com/">Elite Circle</a>
+    </nav>
+    <p>© <span id="yr">2026</span> KSK Tax &amp; Accounting Solutions</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var btn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', function(){ var open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
+  nav.addEventListener('click', function(e){ if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
+  document.querySelectorAll('[data-reason]').forEach(function(a){
+    a.addEventListener('click', function(){ document.getElementById('f-reason').value = a.dataset.reason; });
+  });
+  // Contact form: posts to data-endpoint (e.g. Formspree) when set, otherwise opens the visitor's email app.
+  var form = document.getElementById('contact-form'), status = form.querySelector('.form-status');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    status.classList.remove('err');
+    var missing = [].filter.call(form.querySelectorAll('[required]'), function(f){ return !f.value.trim(); });
+    var email = form.email.value.trim();
+    if (missing.length) { var n = {name:'your name', email:'your email', message:'a message'}, parts = missing.map(function(f){ return n[f.name]; }); status.textContent = 'Add ' + (parts.length > 1 ? parts.slice(0,-1).join(', ') + (parts.length > 2 ? ',' : '') + ' and ' + parts[parts.length-1] : parts[0]) + ' to send.'; status.classList.add('err'); missing[0].focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Check the email address; it needs to look like name@example.com.'; status.classList.add('err'); form.email.focus(); return; }
+    var endpoint = form.dataset.endpoint;
+    if (endpoint) {
+      status.textContent = 'Sending…';
+      fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+        .then(function(r){ if (!r.ok) throw 0; form.reset(); status.textContent = 'Request sent. We’ll reach out to set up a time.'; })
+        .catch(function(){ status.textContent = 'The request didn’t send. Call (404) 781-7638 or email ' + form.dataset.email + '.'; status.classList.add('err'); });
+    } else {
+      var subject = 'Consultation request: ' + form.reason.value;
+      var body = form.message.value.trim() + '\n\n' + form.name.value.trim() + '\n' + email + (form.phone.value.trim() ? '\n' + form.phone.value.trim() : '');
+      window.location.href = 'mailto:' + form.dataset.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      status.textContent = 'Your email app should open with the request ready to send. If it doesn’t, call (404) 781-7638.';
+    }
+  });
+})();
+</script>
+</body>
+</html>
