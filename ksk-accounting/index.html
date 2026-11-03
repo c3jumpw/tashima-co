@@ -23,7 +23,6 @@
   "@type": "AccountingService",
   "name": "KSK Tax & Accounting Solutions",
   "url": "https://kskaccounting.com/",
-  "telephone": "+1-404-781-7638",
   "logo": "https://kskaccounting.com/assets/logo.png",
   "areaServed": "Metro Atlanta, Georgia",
   "address": {"@type": "PostalAddress", "addressRegion": "GA", "addressCountry": "US"},
@@ -31,6 +30,7 @@
   "foundingDate": "2020"
 }
 </script>
+<link rel="stylesheet" href="assets/inquiry.css">
 <style>
 @font-face{font-family:"Bodoni Moda";src:url(assets/fonts/bodoni-moda.woff2) format("woff2-variations"),url(assets/fonts/bodoni-moda.woff2) format("woff2");font-weight:400 900;font-display:swap}
 @font-face{font-family:"Jost";src:url(assets/fonts/jost.woff2) format("woff2-variations"),url(assets/fonts/jost.woff2) format("woff2");font-weight:100 900;font-display:swap}
@@ -197,14 +197,12 @@ section{scroll-margin-top:1rem}
 .details h3{font-family:"Jost",sans-serif;font-size:1rem;font-weight:500;color:var(--slate);letter-spacing:0}
 .details a,.details p{font-size:1.25rem;font-weight:500;text-decoration:none}
 .details a:hover{color:var(--royal);text-decoration:underline;text-underline-offset:.25em}
-form{display:grid;gap:1.2rem;background:var(--mist);padding:clamp(1.5rem,4vw,2.75rem);border-top:6px solid var(--royal)}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .field{display:grid;gap:.4rem}
 .field label{font-weight:500;font-size:1rem}
 input,select,textarea{font:inherit;font-size:1.0625rem;color:var(--navy);background:#fff;border:1px solid #b9c6da;border-radius:2px;padding:.75rem .85rem;width:100%}
 textarea{min-height:140px;resize:vertical}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--royal);outline-offset:0;border-color:var(--royal)}
-form .btn{justify-self:start}
 .form-status{min-height:1.5em;color:var(--slate)}
 .form-status.err{color:#b42318}
 @media (max-width:860px){.contact .wrap{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}
@@ -217,6 +215,8 @@ form .btn{justify-self:start}
 .site-foot a:hover{color:var(--sky)}
 .site-foot p{margin:0}
 .visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.inq{--q-accent:#0041c3;--q-accent-text:#fff;--q-ink:#01172e;--q-muted:#4a5872;--q-surface:#f0f4fa;--q-card:#fff;--q-border:#c9d4e5;--q-radius:8px;--q-head:"Bodoni Moda",Didot,serif;--q-focus:#0041c3;border-top:6px solid #0041c3}
+.inq .q-title,.inq .q-done h3{font-weight:600}
 </style>
 </head>
 <body>
@@ -230,7 +230,6 @@ form .btn{justify-self:start}
       <a href="#services">Services</a>
       <a href="#serve">Who we serve</a>
       <a href="#founder">About</a>
-      <a class="tel" href="tel:+14047817638">(404) 781-7638</a>
       <a class="btn" href="#contact">Book a consultation</a>
     </nav>
   </div>
@@ -381,7 +380,7 @@ form .btn{justify-self:start}
       <div>
         <h2 id="res-title">The free business grant list</h2>
         <p>More than 200 grants for small business owners, gathered in one list. Ask for a copy and we'll send it over.</p>
-        <a class="btn" href="#contact" data-reason="Free grant list">Request the grant list</a>
+        <a class="btn" href="#contact" data-inquiry-set="need=Free grant list">Request the grant list</a>
       </div>
     </div>
   </section>
@@ -390,37 +389,14 @@ form .btn{justify-self:start}
     <div class="wrap">
       <div>
         <h2 id="contact-title">Book a consultation</h2>
-        <p class="intro">Tell us a little about your business and we'll reach out to set up a time.</p>
+        <p class="intro">Answer a few quick questions so we can come prepared. It takes about a minute.</p>
         <div class="details">
-          <div><h3>Call</h3><a href="tel:+14047817638">(404) 781-7638</a></div>
           <div><h3>Email</h3><a href="mailto:info@kskaccounting.com">info@kskaccounting.com</a></div>
           <div><h3>Location</h3><p>Metro Atlanta, Georgia</p></div>
         </div>
       </div>
-      <form id="contact-form" data-endpoint="" data-email="info@kskaccounting.com" novalidate>
-        <div class="row2">
-          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="f-phone">Phone (optional)</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
-          <div class="field">
-            <label for="f-reason">I need help with</label>
-            <select id="f-reason" name="reason">
-              <option>Monthly bookkeeping</option>
-              <option>Tax preparation or planning</option>
-              <option>Production accounting</option>
-              <option>Clean-up or catch-up</option>
-              <option>Business advisory</option>
-              <option>Free grant list</option>
-              <option>Something else</option>
-            </select>
-          </div>
-        </div>
-        <div class="field"><label for="f-msg">Tell us about your business</label><textarea id="f-msg" name="message" required></textarea></div>
-        <button class="btn" type="submit">Request a consultation</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
-      </form>
+      <div data-inquiry role="region" aria-label="Consultation request"><noscript><p>Email <a href="mailto:info@kskaccounting.com">info@kskaccounting.com</a> to request a consultation.</p></noscript></div>
+      <script type="application/json" id="inquiry-config">{"site": "kskaccounting.com", "submitLabel": "Request my consultation", "subjectFields": ["need", "who", "entity", "budget", "timeline"], "priority": [{"when": [{"id": "timeline", "in": ["Right away"]}, {"id": "books", "in": ["More than a year behind"]}], "label": "Catch-up, ASAP"}], "steps": [{"id": "s-need", "title": "What can we help you with?", "auto": true, "fields": [{"id": "need", "type": "cards", "label": "Choose the closest fit", "summary": "Looking for", "options": [{"v": "Monthly bookkeeping", "d": "Reconciled books and monthly reports"}, {"v": "Tax preparation", "d": "Business or personal returns"}, {"v": "Tax planning", "d": "Owe less next year"}, {"v": "Production accounting", "d": "Film, TV, music, or live events"}, {"v": "Clean-up or catch-up", "d": "Get behind books back on track"}, {"v": "Business advisory", "d": "Pricing, structure, and cash flow"}, {"v": "Free grant list", "d": "More than 200 small business grants"}, {"v": "Something else", "d": "Tell us in your own words"}]}]}, {"id": "s-about", "title": "Tell us a little about you", "when": {"id": "need", "notIn": ["Free grant list"]}, "fields": [{"id": "who", "type": "chips", "label": "Who is this for?", "summary": "For", "options": ["My business", "Me personally", "Both"], "when": {"id": "need", "notIn": ["Production accounting", "Free grant list"]}}, {"id": "entity", "type": "chips", "label": "How is the business set up?", "summary": "Business type", "options": ["Sole proprietor", "LLC", "S corporation", "C corporation", "Partnership", "Not sure yet"], "when": {"id": "who", "in": ["My business", "Both"]}}, {"id": "revenue", "type": "chips", "label": "Roughly what does it bring in each year?", "summary": "Annual revenue", "options": ["Under $50K", "$50K to $250K", "$250K to $1M", "Over $1M", "Prefer not to say"], "when": {"id": "who", "in": ["My business", "Both"]}}, {"id": "filing", "type": "chips", "label": "Which describes your income?", "summary": "Personal income", "options": ["W-2 only", "Self-employed or 1099", "Rental income", "A mix of these"], "when": {"id": "who", "in": ["Me personally"]}}, {"id": "budget", "type": "chips", "label": "What's the production budget?", "summary": "Production budget", "options": ["Under $10K", "$10K to $100K", "$100K to $500K", "$500K to $1M", "Over $1M"], "when": {"id": "need", "in": ["Production accounting"]}}, {"id": "stage", "type": "chips", "label": "Where is the production now?", "summary": "Production stage", "options": ["Pre-production", "Shooting", "Post-production", "Wrapped"], "when": {"id": "need", "in": ["Production accounting"]}}]}, {"id": "s-timing", "title": "Where do things stand?", "when": {"id": "need", "notIn": ["Free grant list"]}, "fields": [{"id": "books", "type": "chips", "label": "How current are your books?", "summary": "Books", "options": ["Up to date", "A few months behind", "More than a year behind", "No bookkeeping system yet"], "when": [{"id": "need", "in": ["Monthly bookkeeping", "Clean-up or catch-up", "Business advisory", "Tax preparation", "Tax planning", "Something else"]}, {"id": "who", "in": ["My business", "Both"]}]}, {"id": "timeline", "type": "chips", "label": "When would you like to get started?", "summary": "Timeline", "options": ["Right away", "Within a month", "Before next tax season", "Just exploring"]}]}, {"id": "s-contact", "title": "Where should we reach you?", "sub": "We'll use this to follow up on your request.", "fields": [{"id": "name", "type": "text", "label": "Your name", "short": "your name", "contact": "name", "autocomplete": "name"}, {"id": "email", "type": "email", "label": "Email", "short": "your email", "contact": "email", "autocomplete": "email"}, {"id": "phone", "type": "tel", "label": "Phone", "required": false, "contact": "phone", "autocomplete": "tel"}, {"id": "reach", "type": "chips", "label": "Best way to reach you", "summary": "Prefers", "required": false, "options": ["Email", "Phone call", "Text"]}, {"id": "message", "type": "textarea", "label": "Anything else we should know?", "summary": "Notes", "required": false}]}], "done": {"title": "Thanks, {first}. Your request is in.", "html": "<p>Here's what happens next:<\/p><ol><li>We review your answers.<\/li><li>We reach out the way you prefer to set up a consultation.<\/li><li>You get a clear plan and quote before any work begins.<\/li><\/ol><p>A confirmation is on its way to your inbox.<\/p>"}, "fallback": "We couldn't send your request just now. Email <a href=\"mailto:info@kskaccounting.com\">info@kskaccounting.com<\/a> and we'll take it from there."}</script>
     </div>
   </section>
 </main>
@@ -432,7 +408,6 @@ form .btn{justify-self:start}
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
       <a href="https://tashimafreeman.com/">Tashima Freeman</a>
-      <a href="https://enterelitecircle.com/">Elite Circle</a>
     </nav>
     <p>© <span id="yr">2026</span> KSK Tax &amp; Accounting Solutions</p>
   </div>
@@ -444,32 +419,8 @@ form .btn{justify-self:start}
   var btn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
   btn.addEventListener('click', function(){ var open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
   nav.addEventListener('click', function(e){ if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
-  document.querySelectorAll('[data-reason]').forEach(function(a){
-    a.addEventListener('click', function(){ document.getElementById('f-reason').value = a.dataset.reason; });
-  });
-  // Contact form: posts to data-endpoint (e.g. Formspree) when set, otherwise opens the visitor's email app.
-  var form = document.getElementById('contact-form'), status = form.querySelector('.form-status');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    status.classList.remove('err');
-    var missing = [].filter.call(form.querySelectorAll('[required]'), function(f){ return !f.value.trim(); });
-    var email = form.email.value.trim();
-    if (missing.length) { var n = {name:'your name', email:'your email', message:'a message'}, parts = missing.map(function(f){ return n[f.name]; }); status.textContent = 'Add ' + (parts.length > 1 ? parts.slice(0,-1).join(', ') + (parts.length > 2 ? ',' : '') + ' and ' + parts[parts.length-1] : parts[0]) + ' to send.'; status.classList.add('err'); missing[0].focus(); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Check the email address; it needs to look like name@example.com.'; status.classList.add('err'); form.email.focus(); return; }
-    var endpoint = form.dataset.endpoint;
-    if (endpoint) {
-      status.textContent = 'Sending…';
-      fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-        .then(function(r){ if (!r.ok) throw 0; form.reset(); status.textContent = 'Request sent. We’ll reach out to set up a time.'; })
-        .catch(function(){ status.textContent = 'The request didn’t send. Call (404) 781-7638 or email ' + form.dataset.email + '.'; status.classList.add('err'); });
-    } else {
-      var subject = 'Consultation request: ' + form.reason.value;
-      var body = form.message.value.trim() + '\n\n' + form.name.value.trim() + '\n' + email + (form.phone.value.trim() ? '\n' + form.phone.value.trim() : '');
-      window.location.href = 'mailto:' + form.dataset.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      status.textContent = 'Your email app should open with the request ready to send. If it doesn’t, call (404) 781-7638.';
-    }
-  });
 })();
 </script>
+<script src="assets/inquiry.js" defer></script>
 </body>
 </html>

@@ -32,6 +32,7 @@
   "sameAs": ["https://www.facebook.com/freemanheatandair/", "https://www.instagram.com/freemanheatair"]
 }
 </script>
+<link rel="stylesheet" href="assets/inquiry.css">
 <style>
 @font-face{font-family:"Marcellus";src:url(assets/fonts/marcellus.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Barlow";src:url(assets/fonts/barlow-400.woff2) format("woff2");font-weight:400;font-display:swap}
@@ -205,8 +206,6 @@ section{scroll-margin-top:1rem}
 .facts b{display:block;font-weight:600}
 .facts span{color:var(--slate);font-size:1rem}
 .facts a{color:var(--slate)}
-form{display:grid;gap:1.1rem;background:var(--paper);border-radius:18px;padding:clamp(1.5rem,4vw,2.5rem)}
-form h3{margin-bottom:.25rem}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
 .field{display:grid;gap:.4rem}
 .field label{font-weight:600;font-size:1rem}
@@ -214,8 +213,6 @@ form h3{margin-bottom:.25rem}
 input,select,textarea{font:inherit;font-size:1.0625rem;color:var(--ink);background:#fff;border:2px solid #d4cecc;border-radius:10px;padding:.75rem .9rem;width:100%;min-height:52px}
 textarea{min-height:130px;resize:vertical}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
-form .btn{justify-self:start;background:var(--brand);color:#fff}
-form .btn:hover{background:var(--brand-2)}
 .form-status{min-height:1.5em;color:var(--slate)}
 .form-status.err{color:#b42318}
 .urgent{font-size:1rem;color:var(--slate)}
@@ -238,6 +235,8 @@ form .btn:hover{background:var(--brand-2)}
   .callbar .btn{min-height:52px;font-size:1.0625rem;padding:.5rem}
 }
 @media (prefers-reduced-motion:reduce){.hero,.dial .arc,.modes button{transition:none}}
+.inq{--q-accent:#550000;--q-accent-text:#fff;--q-ink:#1b1818;--q-muted:#5c5655;--q-surface:#f5f4f3;--q-card:#fff;--q-border:#d9d3d1;--q-radius:18px;--q-head:"Marcellus",Georgia,serif;--q-focus:#550000}
+.inq .q-title,.inq .q-done h3{font-weight:400}
 </style>
 </head>
 <body>
@@ -412,7 +411,7 @@ form .btn:hover{background:var(--brand-2)}
     <div class="wrap">
       <div>
         <h2 id="contact-title">Get your system back to comfortable</h2>
-        <p class="intro">For emergencies, call. For everything else, send a request and we'll call you back to schedule.</p>
+        <p class="intro">For emergencies, call. For everything else, answer a few quick questions and we'll call you back to schedule.</p>
         <div class="call-card">
           <span>Call any time, 24/7</span>
           <a href="tel:+14043848125">(404) 384-8125</a>
@@ -423,32 +422,8 @@ form .btn:hover{background:var(--brand-2)}
           <li><svg class="ico" aria-hidden="true"><use href="#i-house"/></svg><div><b>Follow us</b><span><a href="https://www.facebook.com/freemanheatandair/" target="_blank" rel="noopener">Facebook</a> and <a href="https://www.instagram.com/freemanheatair" target="_blank" rel="noopener">Instagram</a></span></div></li>
         </ul>
       </div>
-      <form id="contact-form" data-endpoint="" data-email="service@freemanhvacus.com" novalidate>
-        <h3>Request service</h3>
-        <div class="row2">
-          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required></div>
-        </div>
-        <div class="row2">
-          <div class="field"><label for="f-email">Email <span class="opt">(optional)</span></label><input id="f-email" name="email" type="email" autocomplete="email"></div>
-          <div class="field"><label for="f-zip">ZIP code</label><input id="f-zip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="10" required></div>
-        </div>
-        <div class="field">
-          <label for="f-reason">What do you need?</label>
-          <select id="f-reason" name="reason">
-            <option>AC repair</option>
-            <option>Heating repair</option>
-            <option>New system or replacement</option>
-            <option>Maintenance or tune-up</option>
-            <option>Indoor air quality</option>
-            <option>Something else</option>
-          </select>
-        </div>
-        <div class="field"><label for="f-msg">Tell us what's going on <span class="opt">(optional)</span></label><textarea id="f-msg" name="message"></textarea></div>
-        <button class="btn" type="submit">Send request</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
-        <p class="urgent">No heat or no cooling right now? Call <a href="tel:+14043848125">(404) 384-8125</a> for the fastest help.</p>
-      </form>
+      <div data-inquiry role="region" aria-label="Service request"><noscript><p>Call <a href="tel:+14043848125">(404) 384-8125</a> to request service.</p></noscript></div>
+      <script type="application/json" id="inquiry-config">{"site": "freemanhvacus.com", "submitLabel": "Send my request", "subjectFields": ["need", "system", "zip", "timeline"], "priority": [{"when": {"id": "need", "in": ["No heat or no cooling"]}, "label": "Urgent"}, {"when": {"id": "timeline", "in": ["As soon as possible"]}, "label": "ASAP"}], "footnote": "No heat or no cooling right now? Call <a href=\"tel:+14043848125\">(404) 384-8125<\/a> for the fastest help.", "steps": [{"id": "s-need", "title": "What do you need help with?", "auto": true, "autoExcept": ["No heat or no cooling"], "fields": [{"id": "need", "type": "cards", "label": "Choose the closest fit", "summary": "Service needed", "options": [{"v": "No heat or no cooling", "d": "My system isn't running at all"}, {"v": "Repair", "d": "It's running, but something's not right"}, {"v": "New system or replacement", "d": "Free in-home consultation"}, {"v": "Maintenance or tune-up", "d": "Seasonal service or a service agreement"}, {"v": "Indoor air quality", "d": "Cleaner, healthier air at home"}, {"v": "Something else", "d": "Tell us in your own words"}]}], "notices": [{"when": {"id": "need", "in": ["No heat or no cooling"]}, "tone": "urgent", "html": "<strong>Calling is the fastest way to get help.<\/strong> Emergency service is available 24/7.<br><a class=\"q-call\" href=\"tel:+14043848125\">Call (404) 384-8125<\/a><br><small>Or continue to send a request and we'll call you.<\/small>"}]}, {"id": "s-system", "title": "Tell us about your system", "fields": [{"id": "system", "type": "chips", "label": "What kind of system do you have?", "summary": "System", "options": ["Central AC and furnace", "Heat pump", "AC only", "Furnace only", "Not sure"]}, {"id": "age", "type": "chips", "label": "About how old is it?", "summary": "System age", "options": ["Under 5 years", "5 to 10 years", "10 to 15 years", "Over 15 years", "Not sure"]}]}, {"id": "s-where", "title": "Where and when?", "fields": [{"id": "zip", "type": "zip", "label": "ZIP code", "short": "your ZIP code", "summary": "ZIP code", "autocomplete": "postal-code"}, {"id": "property", "type": "chips", "label": "This is for", "summary": "Property", "options": ["A home I own", "A home I rent", "A business"]}, {"id": "timeline", "type": "chips", "label": "When do you need service?", "summary": "Timing", "options": ["As soon as possible", "This week", "Within a month", "Just planning ahead"]}], "notices": [{"when": {"id": "zip", "prefixNotIn": ["300", "301", "302", "303", "311"]}, "after": "zip", "html": "That ZIP code may be outside our usual service area. Send your request anyway and we'll let you know."}]}, {"id": "s-contact", "title": "How can we reach you?", "sub": "We'll call you to schedule.", "fields": [{"id": "name", "type": "text", "label": "Your name", "short": "your name", "contact": "name", "autocomplete": "name"}, {"id": "phone", "type": "tel", "label": "Phone", "short": "a phone number", "contact": "phone", "autocomplete": "tel"}, {"id": "email", "type": "email", "label": "Email", "required": false, "contact": "email", "autocomplete": "email"}, {"id": "best", "type": "chips", "label": "Best time to call", "summary": "Best time to call", "required": false, "options": ["Morning", "Afternoon", "Evening", "Any time"]}, {"id": "message", "type": "textarea", "label": "Anything else we should know?", "summary": "Notes", "required": false, "placeholder": "What you're noticing, the brand or model, or anything else"}]}], "done": {"title": "Thanks, {first}. We got your request.", "html": "<p>We'll call you to schedule a time that works. If you have no heat or no cooling right now, call <a href=\"tel:+14043848125\">(404) 384-8125<\/a> for the fastest help.<\/p>"}, "fallback": "We couldn't send your request just now. Call <a href=\"tel:+14043848125\">(404) 384-8125<\/a> and we'll take care of you."}</script>
     </div>
   </section>
 </main>
@@ -507,29 +482,8 @@ form .btn:hover{background:var(--brand-2)}
   var month = new Date().getMonth();
   setMode(month >= 9 || month <= 2 ? 'heat' : 'cool');
 
-  // Request form: posts to data-endpoint (e.g. Formspree) when set, otherwise opens the visitor's email app.
-  var form = document.getElementById('contact-form'), status = form.querySelector('.form-status');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    status.classList.remove('err');
-    var missing = [].filter.call(form.querySelectorAll('[required]'), function(f){ return !f.value.trim(); });
-    if (missing.length) { var n = {name:'your name', phone:'a phone number', zip:'your ZIP code'}, parts = missing.map(function(f){ return n[f.name]; }); status.textContent = 'Add ' + (parts.length > 1 ? parts.slice(0,-1).join(', ') + (parts.length > 2 ? ',' : '') + ' and ' + parts[parts.length-1] : parts[0]) + ' so we can call you back.'; status.classList.add('err'); missing[0].focus(); return; }
-    var email = form.email.value.trim();
-    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Check the email address; it needs to look like name@example.com.'; status.classList.add('err'); form.email.focus(); return; }
-    var endpoint = form.dataset.endpoint;
-    if (endpoint) {
-      status.textContent = 'Sending…';
-      fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-        .then(function(r){ if (!r.ok) throw 0; form.reset(); status.textContent = 'Request sent. We’ll call you back to schedule.'; })
-        .catch(function(){ status.textContent = 'The request didn’t send. Call (404) 384-8125 instead.'; status.classList.add('err'); });
-    } else {
-      var subject = 'Service request: ' + form.reason.value + ' (' + form.zip.value.trim() + ')';
-      var body = (form.message.value.trim() || form.reason.value) + '\n\n' + form.name.value.trim() + '\n' + form.phone.value.trim() + (email ? '\n' + email : '') + '\nZIP ' + form.zip.value.trim();
-      window.location.href = 'mailto:' + form.dataset.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      status.textContent = 'Your email app should open with the request ready to send. If it doesn’t, call (404) 384-8125.';
-    }
-  });
 })();
 </script>
+<script src="assets/inquiry.js" defer></script>
 </body>
 </html>

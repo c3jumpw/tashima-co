@@ -30,6 +30,7 @@
   "foundingDate": "2022"
 }
 </script>
+<link rel="stylesheet" href="assets/inquiry.css">
 <style>
 @font-face{font-family:"Michroma";src:url(assets/fonts/michroma.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Hanken Grotesk";src:url(assets/fonts/hanken-grotesk.woff2) format("woff2-variations"),url(assets/fonts/hanken-grotesk.woff2) format("woff2");font-weight:100 900;font-display:swap}
@@ -181,7 +182,6 @@ section{scroll-margin-top:1rem}
 .details h3{font-size:1rem;font-weight:600}
 .details a{font-size:1.25rem;font-weight:700;text-decoration:none}
 .details a:hover{text-decoration:underline;text-underline-offset:.3em}
-form{display:grid;gap:1.2rem}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
 .field{display:grid;gap:.4rem}
 .field label{font-weight:700;font-size:1rem}
@@ -201,6 +201,10 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--ink);outline-off
 .site-foot a{color:#fff;text-decoration:none}
 .site-foot a:hover{color:var(--gold)}
 .site-foot p{margin:0}
+.inq{--q-accent:#000;--q-accent-text:#d7b71a;--q-ink:#111;--q-muted:#5c5b57;--q-surface:#fff;--q-card:#fff;--q-border:#dedcd5;--q-radius:20px;--q-head:"Hanken Grotesk",sans-serif;--q-focus:#000;box-shadow:0 18px 40px -24px rgba(0,0,0,.45)}
+.inq .q-title,.inq .q-done h3{font-weight:700;letter-spacing:-.01em}
+.inq .q-next,.inq .q-back,.inq .q-restart{border-radius:999px}
+.inq .q-chips .q-option input:checked+.q-option-body{color:#d7b71a}
 </style>
 </head>
 <body>
@@ -314,13 +318,12 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--ink);outline-off
       <div>
         <h2 id="founder-title">Meet your coach, Tashima Freeman</h2>
         <div class="copy">
-          <p>In 2020, Tashima lost her corporate job. Instead of looking for another one, she went all in on her accounting firm, KSK Tax &amp; Accounting Solutions, and reached six figures within nine months.</p>
+          <p>In 2020, Tashima lost her corporate job. Instead of looking for another one, she went all in on her own accounting firm and reached six figures within nine months.</p>
           <p>She has been coaching professionals through the same move since 2021. As a trained accountant with an MBA, she makes sure your plan works on paper before it has to work in real life.</p>
         </div>
-        <div class="creds"><span>BA, Accounting</span><span>MBA, Management</span><span>Founder, KSK Accounting</span></div>
+        <div class="creds"><span>BA, Accounting</span><span>MBA, Management</span><span>Two-time founder</span></div>
         <div class="links">
           <a href="https://tashimafreeman.com/">More about Tashima</a>
-          <a href="https://kskaccounting.com/">Her accounting firm</a>
         </div>
       </div>
       <div class="rule">
@@ -348,31 +351,14 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--ink);outline-off
     <div class="wrap">
       <div>
         <h2 id="contact-title">Enter the circle.</h2>
-        <p class="intro">Tell us where you are and what you want to build. We'll reach out to schedule your discovery call.</p>
+        <p class="intro">Answer a few quick questions about where you are and what you want to build. We'll reach out to schedule your discovery call.</p>
         <div class="details">
           <div><h3>Call</h3><a href="tel:+14045009775">(404) 500-9775</a></div>
-          <div><h3>Email</h3><a href="mailto:hello@enterelitecircle.com">hello@enterelitecircle.com</a></div>
+          <div><h3>Email</h3><a href="mailto:contact@enterelitecircle.com">contact@enterelitecircle.com</a></div>
         </div>
       </div>
-      <form id="contact-form" data-endpoint="" data-email="hello@enterelitecircle.com" novalidate>
-        <div class="row2">
-          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-        </div>
-        <div class="field">
-          <label for="f-reason">I'm interested in</label>
-          <select id="f-reason" name="reason">
-            <option>One-on-one business coaching</option>
-            <option>Business consulting</option>
-            <option>Brand strategy and design</option>
-            <option>Project management</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="field"><label for="f-msg">Where are you today?</label><textarea id="f-msg" name="message" required placeholder="Your role, your idea, and when you'd like to make the move"></textarea></div>
-        <button class="btn" type="submit">Book a discovery call</button>
-        <p class="form-status" role="status" aria-live="polite"></p>
-      </form>
+      <div data-inquiry role="region" aria-label="Discovery call request"><noscript><p>Email <a href="mailto:contact@enterelitecircle.com">contact@enterelitecircle.com</a> or call (404) 500-9775 to book a discovery call.</p></noscript></div>
+      <script type="application/json" id="inquiry-config">{"site": "enterelitecircle.com", "submitLabel": "Book my discovery call", "subjectFields": ["need", "stage", "org", "start"], "priority": [{"when": [{"id": "start", "in": ["Right away"]}, {"id": "invest", "in": ["Yes, I'm ready"]}], "label": "Ready now"}], "steps": [{"id": "s-need", "title": "What brings you to Elite Circle?", "auto": true, "fields": [{"id": "need", "type": "cards", "label": "Choose the closest fit", "summary": "Interested in", "options": [{"v": "One-on-one business coaching", "d": "Plan your exit and build your business"}, {"v": "Business consulting", "d": "Operations, pricing, and finances"}, {"v": "Brand strategy and design", "d": "Logo, brand guide, and materials"}, {"v": "Project management", "d": "Launches, rebrands, and initiatives"}, {"v": "Not sure yet", "d": "Let's figure it out together"}]}]}, {"id": "s-where", "title": "Where are you right now?", "fields": [{"id": "stage", "type": "cards", "label": "Pick the one that sounds most like you", "summary": "Where they are", "options": [{"v": "Working full time, with a business idea"}, {"v": "Working full time, with a side business"}, {"v": "Recently left corporate"}, {"v": "Running my business full time"}], "when": {"id": "need", "in": ["One-on-one business coaching", "Business consulting", "Not sure yet"]}}, {"id": "revenue", "type": "chips", "label": "What does the business bring in each month?", "summary": "Monthly revenue", "options": ["Nothing yet", "Under $1K", "$1K to $5K", "$5K to $10K", "Over $10K"], "when": {"id": "stage", "in": ["Working full time, with a side business", "Running my business full time", "Recently left corporate"]}}, {"id": "org", "type": "chips", "label": "What kind of organization is this for?", "summary": "Organization", "options": ["Small business", "Nonprofit", "Government or public agency", "Other"], "when": {"id": "need", "in": ["Brand strategy and design", "Project management"]}}, {"id": "budget", "type": "chips", "label": "What's the project budget?", "summary": "Budget", "options": ["Under $5K", "$5K to $15K", "$15K to $50K", "Over $50K", "Not sure yet"], "when": {"id": "need", "in": ["Brand strategy and design", "Project management"]}}]}, {"id": "s-timing", "title": "Let's talk timing", "fields": [{"id": "leave", "type": "chips", "label": "When would you like to leave your job?", "summary": "Exit timeline", "options": ["Within 3 months", "3 to 6 months", "6 to 12 months", "Not sure yet"], "when": {"id": "stage", "in": ["Working full time, with a business idea", "Working full time, with a side business"]}}, {"id": "start", "type": "chips", "label": "How soon do you want to start working together?", "summary": "Start", "options": ["Right away", "Within a month", "In a few months", "Just exploring"]}, {"id": "invest", "type": "chips", "label": "Are you ready to invest in support right now?", "summary": "Ready to invest", "options": ["Yes, I'm ready", "If it's the right fit", "Not yet"], "when": {"id": "need", "in": ["One-on-one business coaching", "Business consulting", "Not sure yet"]}}]}, {"id": "s-contact", "title": "Where should we reach you?", "sub": "We'll reach out to schedule your discovery call.", "fields": [{"id": "name", "type": "text", "label": "Your name", "short": "your name", "contact": "name", "autocomplete": "name"}, {"id": "email", "type": "email", "label": "Email", "short": "your email", "contact": "email", "autocomplete": "email"}, {"id": "phone", "type": "tel", "label": "Phone", "required": false, "contact": "phone", "autocomplete": "tel"}, {"id": "message", "type": "textarea", "label": "What's the one thing you most want help with?", "summary": "Biggest need", "required": false}]}], "done": {"title": "You're in, {first}.", "html": "<p>We'll review your answers and reach out to schedule your discovery call. A confirmation is on its way to your inbox.<\/p>"}, "fallback": "We couldn't send this just now. Email <a href=\"mailto:contact@enterelitecircle.com\">contact@enterelitecircle.com<\/a> or call <a href=\"tel:+14045009775\">(404) 500-9775<\/a>."}</script>
     </div>
   </section>
 </main>
@@ -384,7 +370,6 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--ink);outline-off
       <a href="#programs">Programs</a>
       <a href="#contact">Contact</a>
       <a href="https://tashimafreeman.com/">Tashima Freeman</a>
-      <a href="https://kskaccounting.com/">KSK Accounting</a>
     </nav>
     <p>© <span id="yr">2026</span> Elite Circle Enterprises LLC</p>
   </div>
@@ -396,29 +381,8 @@ input:focus,select:focus,textarea:focus{outline:3px solid var(--ink);outline-off
   var btn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
   btn.addEventListener('click', function(){ var open = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', open); });
   nav.addEventListener('click', function(e){ if (e.target.tagName === 'A') { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
-  // Contact form: posts to data-endpoint (e.g. Formspree) when set, otherwise opens the visitor's email app.
-  var form = document.getElementById('contact-form'), status = form.querySelector('.form-status');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    status.classList.remove('err');
-    var missing = [].filter.call(form.querySelectorAll('[required]'), function(f){ return !f.value.trim(); });
-    var email = form.email.value.trim();
-    if (missing.length) { var n = {name:'your name', email:'your email', message:'a message'}, parts = missing.map(function(f){ return n[f.name]; }); status.textContent = 'Add ' + (parts.length > 1 ? parts.slice(0,-1).join(', ') + (parts.length > 2 ? ',' : '') + ' and ' + parts[parts.length-1] : parts[0]) + ' to send.'; status.classList.add('err'); missing[0].focus(); return; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Check the email address; it needs to look like name@example.com.'; status.classList.add('err'); form.email.focus(); return; }
-    var endpoint = form.dataset.endpoint;
-    if (endpoint) {
-      status.textContent = 'Sending…';
-      fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-        .then(function(r){ if (!r.ok) throw 0; form.reset(); status.textContent = 'Request sent. We’ll reach out to schedule your discovery call.'; })
-        .catch(function(){ status.textContent = 'The request didn’t send. Call (404) 500-9775 or email ' + form.dataset.email + '.'; status.classList.add('err'); });
-    } else {
-      var subject = 'Discovery call: ' + form.reason.value;
-      var body = form.message.value.trim() + '\n\n' + form.name.value.trim() + '\n' + email;
-      window.location.href = 'mailto:' + form.dataset.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      status.textContent = 'Your email app should open with the request ready to send. If it doesn’t, call (404) 500-9775.';
-    }
-  });
 })();
 </script>
+<script src="assets/inquiry.js" defer></script>
 </body>
 </html>
